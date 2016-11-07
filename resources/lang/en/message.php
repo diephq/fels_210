@@ -27,5 +27,12 @@ return [
     'save_changes' => 'Save changes',
     'cancel' => 'Cancel',
     'not_found' => 'Not found',
+    'lesson_not_found' => 'Lesson not found',
+    'create_lesson_error' => 'Error when create lesson',
+    'start_lesson' => 'Start Lesson',
+    'name_lesson_1' => 'Lesson 1', // lesson's name
+    'name_lesson_2' => 'Lesson 2',
+    'name_lesson_3' => 'Lesson 3',
+    'result' => 'Result',
 
 ];

@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::auth();
+
+Route::get('/', 'HomeController@index');
+
+Route::get('/user/{id}', [
+    'as' => 'profile',
+    'uses' => 'UserController@edit'
+]);
+
+Route::post('/user/{id}', [
+    'as' => 'update_profile',
+    'uses' => 'UserController@update'
+]);

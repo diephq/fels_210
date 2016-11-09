@@ -5,39 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Flewer" />
+    <meta name="description" content="" />
     <meta name="author" content="" />
-
-    @section('title')
-        {{trans('message.project')}}
-    @show
 
     @section('css')
         {{ Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css') }}
+        {{ Html::style('assets/css/common.css') }}
     @show
 
 </head>
-<body class="page-body">
+<body id="app-layout">
 
-    <div class="container">
-        <div class="main-content">
+        @include('layouts.header')
 
-            @include('layouts.header')
+        <!-- include the alert template here -->
+        @include('template.alert')
+        @include('template.error')
 
-            <!-- include the alert template here -->
-            @include('template.alert')
-            @include('template.error')
+        @yield('content')
 
-            @yield('content')
-
-            @include('layouts.footer')
-
-        </div>
-    </div>
+        @include('layouts.footer')
 
     @section('js')
-        {{ Html::style('bower_components/jquery/dist/jquery.min.js') }}
-        {{ Html::style('bower_components/bootstrap/dist/js/bootstrap.min.js') }}
+        {{ Html::script('bower_components/jquery/dist/jquery.min.js') }}
+        {{ Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') }}
     @show
 </body>
 </html>

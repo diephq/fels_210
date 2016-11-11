@@ -16,3 +16,4 @@ bootstrap/cache/
 .idea/
 storage/
 public/bower_components/
+public/uploads/

@@ -37,5 +37,18 @@ return [
     'learned' => 'Words ready learned',
     'select_category' => '-- Select an Category --',
     'index' => '#',
-
+    'main' => 'MAIN NAVIGATION',
+    'user' => 'User',
+    'list_user' => 'List Users',
+    'create_user' => 'Create User',
+    'list_categories' => 'List Categories',
+    'create_category' => 'Create Category',
+    'admin' => [
+        'site' => 'Admin',
+        'login' => 'Admin Login',
+    ],
+    'admin_user' => [
+        'login_success' => 'Admin login success',
+        'login_error' => 'Admin login error',
+     ]
 ];

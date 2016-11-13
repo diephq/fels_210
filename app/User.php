@@ -25,6 +25,14 @@ class User extends Authenticatable
     ];
 
     /**
+     * Validate rules login
+     */
+    public $rules_login = [
+        'email' => 'required|email|max:255',
+        'password' => 'required|min:6'
+    ];
+
+    /**
      * The validation rules
      *
      * @var array
@@ -36,6 +44,15 @@ class User extends Authenticatable
         'password' => 'required|min:6|max:30|confirmed',
         'password_confirmation' => 'required'
     ];
+
+    /**
+     * Check is admin
+     * @return mixed
+     */
+    public function isAdmin()
+    {
+        return $this->role == config('constants.ADMIN_ROLE');
+    }
 
     /**
      * Update user

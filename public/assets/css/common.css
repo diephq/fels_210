@@ -2,6 +2,9 @@
     height: 100px;
     width: 100px;
 }
+.top-60 {
+    margin-top: 60px;
+}
 .top-100 {
     margin-top: 100px;
 }

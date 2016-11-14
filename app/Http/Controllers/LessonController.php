@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use Validator;
 use App\Word;
@@ -33,6 +34,8 @@ class LessonController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
+
         $this->validate($request, $this->lesson->rules);
 
         DB::beginTransaction();
@@ -55,7 +58,9 @@ class LessonController extends Controller
             foreach ($words as $word) {
                 $results []  =  [
                     'word_id' => $word->id,
-                    'lesson_id' => $lesson->id
+                    'lesson_id' => $lesson->id,
+                    'user_id' => $user->id
+
                 ];
             }
 

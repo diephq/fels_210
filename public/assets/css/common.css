@@ -2,3 +2,22 @@
     height: 100px;
     width: 100px;
 }
+.top-100 {
+    margin-top: 100px;
+}
+.top-10 {
+    margin-top: 10px;
+}
+.top-60 {
+    margin-top: 60px;
+}
+
+.left-10 {
+    margin-left: 10px;
+}
+.score {
+    float: right;
+}
+.date_test {
+    padding-left: 50px;
+}

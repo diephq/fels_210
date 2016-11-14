@@ -15,7 +15,7 @@
                     <li><a href="{{ url('/login') }}">{{ trans('message.login') }}</a></li>
                     <li><a href="{{ url('/register') }}">{{ trans('message.register') }}</a></li>
                 @else
-                    <li><a href="#">{{ trans('message.categories') }}</a></li>
+                    <li><a href="{{ route('categories') }}">{{ trans('message.categories') }}</a></li>
                     <li><a href="#">{{ trans('message.words' ) }}</a></li>
                     <li><a href="#">{{ trans('message.activities') }}</a></li>
 
@@ -25,7 +25,7 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="/user/{{Auth::user()->id}}" ><span class="glyphicon glyphicon-log-in"></span> {{ trans('message.edit_profile') }}</a></li>
+                            <li><a href="/user/{{ Auth::user()->id }}" ><span class="glyphicon glyphicon-edit"></span> {{ trans('message.edit_profile') }}</a></li>
                             <li><a href="{{ url('/logout') }}"><span class="glyphicon glyphicon-log-out"></span> {{ trans('message.logout') }}</a></li>
                         </ul>
                     </li>

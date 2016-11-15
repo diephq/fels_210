@@ -10,6 +10,8 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
+    protected $user;
+
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
@@ -35,8 +37,9 @@ class AuthController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(User $user)
     {
+        $this->user = $user;
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
 
@@ -66,7 +69,7 @@ class AuthController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'password' => $this->user->password = $data['password']
         ]);
     }
 }

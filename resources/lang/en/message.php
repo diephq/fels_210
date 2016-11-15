@@ -34,5 +34,8 @@ return [
     'name_lesson_2' => 'Lesson 2',
     'name_lesson_3' => 'Lesson 3',
     'result' => 'Result',
+    'learned' => 'Words ready learned',
+    'select_category' => '-- Select an Category --',
+    'index' => '#',
 
 ];

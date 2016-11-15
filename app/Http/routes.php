@@ -51,4 +51,10 @@ Route::group(['middleware' => 'auth'], function () {
         'as' => 'answer',
         'uses' => "LessonController@answer"
     ]);
+
+    Route::get('words', [
+        'as' => 'words',
+        'uses' => 'WordController@index'
+    ]);
+
 });

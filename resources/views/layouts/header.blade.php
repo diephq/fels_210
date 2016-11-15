@@ -16,7 +16,7 @@
                     <li><a href="{{ url('/register') }}">{{ trans('message.register') }}</a></li>
                 @else
                     <li><a href="{{ route('categories') }}">{{ trans('message.categories') }}</a></li>
-                    <li><a href="#">{{ trans('message.words' ) }}</a></li>
+                    <li><a href="{{ route('words') }}">{{ trans('message.words' ) }}</a></li>
                     <li><a href="#">{{ trans('message.activities') }}</a></li>
 
                     <li class="dropdown">

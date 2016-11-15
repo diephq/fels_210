@@ -51,6 +51,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 {{ Form::submit(trans('message.login') , ['class' => 'btn btn-primary']) }}
+                                <a href="redirect" class='btn btn-primary'>{{ trans('message.login_facebook') }}</a>
                             </div>
                         </div>
                     {{ Form::close() }}

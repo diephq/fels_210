@@ -8,4 +8,6 @@ return [
     'PAGINATE_ADMIN' => 15,
     'LESSON_TESTED' => 1,
     'ADMIN_ROLE' => 1,
+    'USER_ROLE' => 0,
+
 ];

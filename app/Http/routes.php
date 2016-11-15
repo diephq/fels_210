@@ -58,3 +58,11 @@ Route::group(['middleware' => 'auth'], function () {
     ]);
 
 });
+
+Route::group(['prefix' => 'admin'], function () {
+
+    Route::get('login', ['as' => 'admin_login', 'uses' => 'Admin\AuthController@getLogin']);
+    Route::post('login', ['uses' => 'Admin\AuthController@postLogin']);
+
+});
+

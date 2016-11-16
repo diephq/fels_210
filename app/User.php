@@ -91,18 +91,4 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($password);
     }
 
-    /**
-     * Set the user's password.
-     *
-     * @param  string  $avatar
-     * @param $avatar
-     */
-    public function setAvatarAttribute($avatar)
-    {
-        if (empty($avatar)) {
-            $this->attributes['avatar'] = config('path.to_avatar_default');
-        } else {
-            $this->attributes['avatar'] = config('path.to_avatar') . $avatar;
-        }
-    }
 }

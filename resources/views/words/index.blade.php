@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="container">
+    <div class="container category">
         <div class="row">
             {!! Form::open(array('url' => '/words', 'method' => 'get')) !!}
                 <div class="col-sm-12">
@@ -26,47 +26,48 @@
             {!! Form::close() !!}
         </div>
         <hr>
+
         <div class="row">
-            <ul class="list-group">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>{{ trans('message.index') }}</th>
-                            <th>{{ trans('message.categories') }}</th>
-                            <th>{{ trans('message.words') }}</th>
-                            <th>{{ trans('message.learned') }}</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($words as $word)
-                                @if ($learned)
-                                    <tr>
-                                    @if (!empty($word->results['0']))
-                                        <td>{{ $word->id }}</td>
-                                        <td>{{ $word->category->name }}</td>
-                                        <td>{{ $word->text }}</td>
-                                        <td class="glyphicon glyphicon-check"></td>
-                                    @endif
-                                    </tr>
-                                @else
-                                <tr>
+            <div class="table-responsive col-md-8 col-md-offset-2   ">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th>{{ trans('message.index') }}</th>
+                        <th>{{ trans('message.categories') }}</th>
+                        <th>{{ trans('message.words') }}</th>
+                        <th>{{ trans('message.learned') }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($words as $word)
+                        @if ($learned)
+                            <tr>
+                                @if (!empty($word->results['0']))
                                     <td>{{ $word->id }}</td>
                                     <td>{{ $word->category->name }}</td>
                                     <td>{{ $word->text }}</td>
-                                    @if (!empty($word->results['0']))
-                                        <td class="glyphicon glyphicon-check"></td>
-                                    @else
-                                        <td class="glyphicon glyphicon-unchecked"></td>
-                                    @endif
-                                </tr>
+                                    <td class="glyphicon glyphicon-check"></td>
                                 @endif
-                            @endforeach
-                        </tbody>
-                    </table>
-                    {{ $words->links() }}
-                </div>
-            </ul>
+                            </tr>
+                        @else
+                            <tr>
+                                <td>{{ $word->id }}</td>
+                                <td>{{ $word->category->name }}</td>
+                                <td>{{ $word->text }}</td>
+                                <td class="col-md-2">
+                                    @if (!empty($word->results['0']))
+                                        <span class="glyphicon glyphicon-check"></span>
+                                    @else
+                                        <span class="glyphicon glyphicon-unchecked"></span>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endif
+                    @endforeach
+                    </tbody>
+                </table>
+                {{ $words->links() }}
+            </div>
         </div>
     </div>
 @stop

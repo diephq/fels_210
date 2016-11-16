@@ -70,5 +70,8 @@ return [
     'delete_confirm' => 'Confirm delete',
     'remove' => 'Remove',
     'login_facebook' => 'Login Facebook',
-
+    'score' => 'Score',
+    'date' => 'Date',
+    'id' => 'ID',
+    
 ];

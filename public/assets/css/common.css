@@ -82,3 +82,10 @@
 .radio label input[type="radio"]:disabled + .cr {
     opacity: .5;
 }
+
+.panel-body form {
+    display: inline;
+}
+.table-responsive form {
+    display: inline;
+}

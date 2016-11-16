@@ -16,4 +16,12 @@ class Category extends Model
         'name', 'description'
     ];
 
+    /**
+     * @var array
+     */
+    public $rules = [
+        'name' => 'required|min:3',
+        'description' => 'required|max:255'
+    ];
+
 }

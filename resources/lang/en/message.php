@@ -43,6 +43,7 @@ return [
     'create_user' => 'Create User',
     'list_categories' => 'List Categories',
     'create_category' => 'Create Category',
+    'create' => 'Create',
     'admin' => [
         'site' => 'Admin',
         'login' => 'Admin Login',
@@ -50,5 +51,23 @@ return [
     'admin_user' => [
         'login_success' => 'Admin login success',
         'login_error' => 'Admin login error',
-     ]
+     ],
+    'category' => [
+        'create_error' => 'Category create error',
+        'create_success' => 'Category create success',
+        'update_error' => 'Category update error',
+        'update_success' => 'Category update success',
+        'delete_error' => 'Category delete error',
+        'delete_success' => 'Category delete success',
+        'create_new' => 'Create New Category',
+        'edit' => 'Edit Category',
+        'name' => 'Name',
+        'description' => 'Description',
+        'id' => 'ID',
+        'actions' => 'Actions',
+        'category' => 'Category',
+    ],
+    'delete_confirm' => 'Confirm delete',
+    'remove' => 'Remove',
+
 ];

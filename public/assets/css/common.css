@@ -78,6 +78,39 @@
     opacity: 1;
 }
 
+.footer {
+    background-color: #f8f8f8;
+    padding: 10px 0;
+}
+
+.category {
+    min-height: 590px;
+}
+
+.page-header {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.show-clock {
+    position: fixed !important;
+    left: 970px;
+    top: 80px;
+}
+
+.lesson {
+    padding-top: 60px;
+}
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.search {
+    float: right;
+}
+
 .checkbox label input[type="checkbox"]:disabled + .cr,
 .radio label input[type="radio"]:disabled + .cr {
     opacity: .5;
@@ -89,3 +122,4 @@
 .table-responsive form {
     display: inline;
 }
+

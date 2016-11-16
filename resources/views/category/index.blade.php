@@ -1,18 +1,25 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="container">
-        <h1>{{ trans('message.categories') }}</h1>
-        <hr>
-        <div class="row">
-            <div class="col-md-4">
-                <ul class="list-group">
-                    @foreach($categories as $category)
-                        <li class="list-group-item"><a href="{{ route('category_detail', ['id' => $category->id]) }}">{{ $category->name }}</a></li>
+    <div class="container category">
+        <div class="col-md-8 col-md-offset-2">
+            <h1 class="page-header">{{ trans('message.categories') }}</h1>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <th>{{ trans('message.id') }}</th>
+                    <th>{{ trans('message.name') }}</th>
+                </thead>
+                <tbody>
+                    @foreach($categories as $key => $category)
+                        <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td><a href="{{ route('category_detail', ['id' => $category->id]) }}">{{ $category->name }}</a></td>
+                        </tr>
                     @endforeach
-                </ul>
-                {{ $categories->links() }}
-            </div>
+                </tbody>
+            </table>
         </div>
     </div>
 @stop

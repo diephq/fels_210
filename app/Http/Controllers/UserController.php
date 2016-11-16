@@ -92,7 +92,7 @@ class UserController extends Controller
             $avatarName = time() . $request->file('avatar')->getClientOriginalName();
             $path = public_path() . config('path.to_avatar');
             $request->file('avatar')->move($path, $avatarName);
-            $params['avatar'] = $user->avatar = $avatarName;
+            $params['avatar'] = config('path.to_avatar') . $avatarName;
         }
 
         // update user

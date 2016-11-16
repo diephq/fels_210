@@ -53,8 +53,8 @@
                     <span class="pull-right-container"><span class="label label-primary pull-right"></span></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i>{{ trans('message.list_categories') }}</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>{{ trans('message.create_category') }}</a></li>
+                    <li><a href="/admin/category"><i class="fa fa-circle-o"></i>{{ trans('message.list_categories') }}</a></li>
+                    <li><a href="/admin/category/create"><i class="fa fa-circle-o"></i>{{ trans('message.create_category') }}</a></li>
                 </ul>
             </li>
         </ul>

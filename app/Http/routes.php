@@ -66,3 +66,9 @@ Route::group(['prefix' => 'admin'], function () {
 
 });
 
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function() {
+
+    Route::resource('category', 'Admin\CategoryController');
+});
+

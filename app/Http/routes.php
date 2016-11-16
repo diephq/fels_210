@@ -60,6 +60,21 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'WordController@index'
     ]);
 
+    Route::get('users', [
+        'as' => 'users',
+        'uses' => 'FollowController@index'
+    ]);
+
+    Route::get('following', [
+        'as' => 'following',
+        'uses' => 'FollowController@listUserFollowing'
+    ]);
+
+    Route::post('follow_user', [
+        'as' => 'follow_user',
+        'uses' => 'FollowController@follow'
+    ]);
+
 });
 
 Route::group(['prefix' => 'admin'], function () {

@@ -54,6 +54,11 @@ class User extends Authenticatable
         return $this->role == config('constants.ADMIN_ROLE');
     }
 
+    public function following()
+    {
+        return $this->hasMany('App\Relationship', 'target_id');
+    }
+
     /**
      * Update user
      *
@@ -91,4 +96,22 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($password);
     }
 
+    /**
+     * Get list user following
+     *
+     * @param $userId
+     * @return bool|\Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+    public function getList($userId)
+    {
+        if (empty($userId)) {
+            return false;
+        }
+
+        return User::where('id', '!=', $userId)
+            ->with(['following' => function($query) use ($userId) {
+                $query->where('user_id', $userId);
+            }])
+            ->paginate(config('constants.PAGINATE_USER'));
+    }
 }

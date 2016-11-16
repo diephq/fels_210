@@ -73,5 +73,12 @@ return [
     'score' => 'Score',
     'date' => 'Date',
     'id' => 'ID',
-    
+    'follow' => [
+        'follow' => 'Follow',
+        'following' => 'Following',
+        'error' => 'Follow error',
+        'success' => 'Follow success',
+        'all_users' => 'All users',
+
+    ],
 ];

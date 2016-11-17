@@ -115,11 +115,22 @@
 .radio label input[type="radio"]:disabled + .cr {
     opacity: .5;
 }
-
 .panel-body form {
     display: inline;
 }
 .table-responsive form {
     display: inline;
+}
+.image_size_small {
+    height: 50px;
+    width: 50px;
+}
+.follow {
+    float: right;
+}
+
+.form_follow {
+    display: inline-block;
+    float: right;
 }
 

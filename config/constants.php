@@ -9,5 +9,7 @@ return [
     'LESSON_TESTED' => 1,
     'ADMIN_ROLE' => 1,
     'USER_ROLE' => 0,
+    'UN_FOLLOW' => 1,
+    'FOLLOWING' => 2,
 
 ];

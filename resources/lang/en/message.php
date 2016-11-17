@@ -90,4 +90,14 @@ return [
     'edit_user' => 'Edit User',
     'user_delete_success' => 'Delete success',
     'user_delete_error' => 'Delete error',
+    'admin_word' => [
+        'word' => 'Words',
+        'actions' => 'Actions',
+        'create_error' => 'Word create error',
+        'create_success' => 'Word create success',
+        'update_error' => 'Word update error',
+        'update_success' => 'Word update success',
+        'delete_error' => 'Word delete error',
+        'delete_success' => 'Word delete success',
+    ],
 ];

@@ -85,4 +85,9 @@ class Word extends Model
         return $words->groupBy('words.id')
             ->paginate(config('constants.PAGINATE_USER'));
     }
+
+    public function getListWordAdmin()
+    {
+        return Word::with('category')->paginate(config('constants.PAGINATE_ADMIN'));
+    }
 }

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container category">
         <div class="col-md-8 col-md-offset-2">
-            <h1 class="page-header">{{ trans('message.follow.following') }}</h1>
+            <h1 class="page-header title">{{ trans('message.follow.following') }}</h1>
         </div>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -11,11 +11,21 @@
                     @foreach($users as $user)
                         @if (!empty($user->following))
                         <?php $avatar = !empty($user->following['avatar']) ? $user->following['avatar'] : config('path.to_avatar_default') ?>
-                        <li class="list-group-item">
-                            <img src="{{ $avatar }}" class="avatar img-circle image_size_small" alt="avatar">
-                            <span>{{ $user->following['name'] }}</span>
-                            {{ Form::hidden('_token', csrf_token(), ['id' => '_token']) }}
-                            {{ Form::submit(trans('message.follow.following'), ['class' => 'btn-success follow', 'id' => 'follow', 'target_id' => $user->following['id'] ]) }}
+                        <li class="list-group-item list-item">
+                            <div class="avatar">
+                                <img src="{{ $avatar }}" class="avatar img-circle image_size_small" alt="avatar">
+                            </div>
+                            <div class="name">
+                                <span>{{ $user->following['name'] }}</span>
+                            </div>
+                            <div class="email">
+                                <span>{{ $user->following['email'] }}</span>
+                            </div>
+                            <div class='btn-show-follow'>
+                                {{ Form::hidden('_token', csrf_token(), ['id' => '_token']) }}
+                                {{ Form::submit(trans('message.follow.following'), ['class' => 'btn-follow btn-following follow', 'id' => 'follow', 'target_id' => $user->following['id'] ]) }}
+                            </div>
+                            
                         </li>
                         @endif
                     @endforeach

@@ -51,6 +51,7 @@ return [
     'admin_user' => [
         'login_success' => 'Admin login success',
         'login_error' => 'Admin login error',
+        'add_new_user' => 'Add New User',
      ],
     'category' => [
         'create_error' => 'Category create error',
@@ -79,6 +80,14 @@ return [
         'error' => 'Follow error',
         'success' => 'Follow success',
         'all_users' => 'All users',
-
     ],
+    'role' => 'Role',
+    'avatar' => 'Avatar',
+    'actions' => 'Actions',
+    'create_user_error' => 'Create user error',
+    'create_user_success' => 'Create new user successful',
+    'button_create' => 'Create',
+    'edit_user' => 'Edit User',
+    'user_delete_success' => 'Delete success',
+    'user_delete_error' => 'Delete error',
 ];

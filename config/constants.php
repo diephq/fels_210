@@ -11,5 +11,11 @@ return [
     'USER_ROLE' => 0,
     'UN_FOLLOW' => 1,
     'FOLLOWING' => 2,
+    'ANSWER_1' => 1,
+    'ANSWER_2' => 2,
+    'ANSWER_3' => 3,
+    'ANSWER_4' => 4,
+    'TRUE_ANSWER' => 1,
+    'FALSE_ANSWER' => 0,
 
 ];

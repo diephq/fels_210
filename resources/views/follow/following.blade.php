@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container category">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <h1 class="page-header title">{{ trans('message.follow.following') }}</h1>
         </div>
         <div class="row">
@@ -15,10 +15,10 @@
                             <div class="avatar">
                                 <img src="{{ $avatar }}" class="avatar img-circle image_size_small" alt="avatar">
                             </div>
-                            <div class="name">
+                            <div class="">
                                 <span>{{ $user->following['name'] }}</span>
                             </div>
-                            <div class="email">
+                            <div class="email category_name">
                                 <span>{{ $user->following['email'] }}</span>
                             </div>
                             <div class='btn-show-follow'>

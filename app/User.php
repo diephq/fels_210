@@ -109,6 +109,7 @@ class User extends Authenticatable
         }
 
         return User::where('id', '!=', $userId)
+            ->where('role', config('constants.USER_ROLE'))
             ->with(['following' => function($query) use ($userId) {
                 $query->where('user_id', $userId);
             }])

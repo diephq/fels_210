@@ -88,7 +88,7 @@
 }
 
 .category {
-    min-height: 662px;
+    min-height: 603px;
     background-color: #fff;
 }
 
@@ -108,8 +108,8 @@ li.list-item > .btn-show-follow {
 }
 
 li.list-item > .name {
-    width: 150px;
-    padding-left: 50px;
+    width: 200px;
+    padding-left: 30px;
 }
 
 li.list-item > .email {
@@ -120,17 +120,17 @@ li.list-item > .email {
     border: 0px;
     padding: 10px 10px;
     width: 90px;
-    background-color: #1f81a6;
+    background-color: #e05f22;
     color: #fff;
 }
 
 .btn-following {
-    background-color: #e05f22;
+    background-color: #1FA67A;
 }
 
 .show-clock {
     position: fixed !important;
-    left: 895px;
+    left: 855px;
     top: 80px;
 }
 
@@ -219,3 +219,51 @@ a:hover.category-item {
     float: right;
 }
 
+.image_size_small {
+    height: 50px;
+    width: 50px;
+}
+.follow {
+    float: right;
+}
+
+.form_follow {
+    display: inline-block;
+    float: right;
+}
+
+.image_size_small {
+    height: 50px;
+    width: 50px;
+}
+.follow {
+    float: right;
+}
+
+.form_follow {
+    display: inline-block;
+    float: right;
+}
+
+.image_size_small {
+    height: 50px;
+    width: 50px;
+}
+.follow {
+    float: right;
+}
+
+.form_follow {
+    display: inline-block;
+    float: right;
+}
+
+.login {
+    margin-top: 100px
+}
+.score {
+    font-size: 25px;
+}
+.category_name {
+    padding-left: 40px;
+}

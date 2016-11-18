@@ -16,7 +16,7 @@
         {{ Html::style('bower_components/AdminLTE/plugins/datepicker/datepicker3.css') }}
         {{ Html::style('bower_components/AdminLTE/plugins/daterangepicker/daterangepicker.css') }}
         {{ Html::style('bower_components/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}
-        {{ Html::style('assets/css/common.css') }}
+        {{ Html::style('assets/css/admin.css') }}
     @show
 
 </head>

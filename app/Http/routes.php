@@ -75,6 +75,11 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'FollowController@follow'
     ]);
 
+    Route::get('activities', [
+        'as' => 'activities',
+        'uses' => 'ActivityController@index'
+    ]);
+
 });
 
 Route::group(['prefix' => 'admin'], function () {

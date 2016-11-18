@@ -1,38 +1,43 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="container category padding-top">
+    <div class="container category ">
+        <div class="col-md-10 col-md-offset-1">
+            <h1 class="page-header title">{{ trans('message.admin_word.word') }}</h1>
+        </div>
         <div class="row">
-            <div class="col-md-9 col-md-offset-1">
-                 {!! Form::open(array('url' => '/words', 'method' => 'get')) !!}
-                    <div class="col-sm-12">
+            <div class="col-md-9 col-md-offset-2">
+            {!! Form::open(array('url' => '/words', 'method' => 'get')) !!}
+                <div class="col-sm-12">
+                    <div class="col-sm-4">
+                        <select name="category" class="form-control">
+                            <option disabled selected value>{{ trans('message.select_category') }}</option>
+                            @foreach($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-sm-8">
                         <div class="col-sm-4">
-                            <select name="category" class="form-control">
-                                <option disabled selected value>{{ trans('message.select_category') }}</option>
-                                @foreach($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach
-                            </select>
+                            <label class="checkbox-inline">
+                                {{ Form::radio('learned', config('constants.LESSON_TESTED')) }} {{ trans('message.learned') }}
+                            </label>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="checkbox">
-                                <label class="checkbox-inline">
-                                    {{ Form::checkbox('learned', config('constants.LESSON_TESTED')) }} {{ trans('message.learned') }}
-                                    <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                                </label>
-                            </div>
+                        <div class="col-sm-4">
+                            <label class="checkbox-inline">
+                                {{ Form::radio('unlearned', config('constants.LESSON_UN_TESTED')) }} {{ trans('message.un_learned') }}
+                            </label>
                         </div>
-                        {!! Form::submit('Search' , ['class' => 'btn btn-primary']) !!}
+                        <div class="col-sm-4">
+                            {!! Form::submit('Search' , ['class' => 'btn btn-primary']) !!}
+                        </div>
                     </div>
                 {!! Form::close() !!}
             </div>
-           
         </div>
-        <hr>
 
         <div class="row">
-
-            <div class="table-responsive col-md-8 col-md-offset-2   ">
+            <div class="table-responsive col-md-8 col-md-offset-2 top-10  ">
                 <table class="table table-bordered table-hover table-striped">
                     <thead>
                     <tr>
@@ -44,13 +49,22 @@
                     </thead>
                     <tbody>
                     @foreach($words as $word)
-                        @if ($learned)
+                        @if ($learned && !$unlearned)
                             <tr>
-                                @if (!empty($word->results))
+                                @if (!empty($word->user_words['0']))
                                     <td>{{ $word->id }}</td>
-                                    <td>{{ $word->category }}</td>
+                                    <td>{{ $word->category['name'] }}</td>
                                     <td>{{ $word->text }}</td>
-                                    <td class="glyphicon glyphicon-check"></td>
+                                    <td class="col-md-2"><span class="glyphicon glyphicon-check"></span></td>
+                                @endif
+                            </tr>
+                        @elseif ($unlearned && !$learned)
+                            <tr>
+                                @if (empty($word->user_words['0']))
+                                    <td>{{ $word->id }}</td>
+                                    <td>{{ $word->category['name'] }}</td>
+                                    <td>{{ $word->text }}</td>
+                                    <td class="col-md-2"><span class="glyphicon glyphicon-unchecked"></span></td>
                                 @endif
                             </tr>
                         @else
@@ -59,7 +73,7 @@
                                 <td>{{ $word->category['name'] }}</td>
                                 <td>{{ $word->text }}</td>
                                 <td class="col-md-2">
-                                    @if (!empty($word->results))
+                                    @if (!empty($word->user_words['0']))
                                         <span class="glyphicon glyphicon-check"></span>
                                     @else
                                         <span class="glyphicon glyphicon-unchecked"></span>

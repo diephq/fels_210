@@ -2,11 +2,12 @@
 
 return [
     'LESSON_1' => 2, // this is words for lesson
-    'LESSON_2' => 25,
-    'LESSON_3' => 30,
+    'LESSON_2' => 3,
+    'LESSON_3' => 4,
     'PAGINATE_USER' => 10,
     'PAGINATE_ADMIN' => 15,
     'LESSON_TESTED' => 1,
+    'LESSON_UN_TESTED' => 2,
     'ADMIN_ROLE' => 1,
     'USER_ROLE' => 0,
     'UN_FOLLOW' => 1,

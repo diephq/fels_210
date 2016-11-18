@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="container category">
-        <div class="col-md-10 col-md-offset-2">
-            <h2 class="title">{{ $category->name }}</h2>
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="page-header title">{{ $category->name }}</h2>
         </div>
         <div class="col-md-8 col-md-offset-2 border-bottom">
-            <h3 class="description">{{ $category->description }}</h3>
+            <h4 class="description">{{ $category->description }}</h4>
         </div>
         <br>
         
@@ -14,13 +14,13 @@
             <div class="col-md-8 col-md-offset-2">
                 {{ Form::open(['url' => 'lesson/create', 'method' => 'post']) }}
                 <div class="col-md-3">
-                    {{ Form::radio('lesson_type', config('constants.LESSON_1')) }} {{ trans('message.name_lesson_1') }}
+                    {{ Form::radio('lesson_type', config('constants.LESSON_1')) }} {{ trans('message.lesson_name_1') }}
                 </div>
                 <div class="col-md-3">
-                    {{ Form::radio('lesson_type', config('constants.LESSON_2')) }} {{ trans('message.name_lesson_2') }}
+                    {{ Form::radio('lesson_type', config('constants.LESSON_2')) }} {{ trans('message.lesson_name_2') }}
                 </div>
                 <div class="col-md-3">
-                    {{ Form::radio('lesson_type', config('constants.LESSON_3')) }} {{ trans('message.name_lesson_3') }}
+                    {{ Form::radio('lesson_type', config('constants.LESSON_3')) }} {{ trans('message.lesson_name_3') }}
                 </div>
                 {{ Form::hidden('category_id', $category->id )}}
                 {{ Form::hidden('user_id', $user->id) }}

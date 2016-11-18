@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container category">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <h1 class="page-header title">{{ trans('message.follow.all_users') }}</h1>
         </div>
         <div class="row">

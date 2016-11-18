@@ -9,6 +9,8 @@ use App\Word;
 use App\Result;
 use App\Lesson;
 use App\Category;
+use App\Activity;
+use App\UserWord;
 use DB;
 use App\Http\Requests;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -19,13 +21,17 @@ class LessonController extends Controller
     protected $result;
     protected $lesson;
     protected $category;
+    protected $activity;
+    protected $userWord;
 
-    public function __construct(Word $word, Result $result, Lesson $lesson, Category $category)
+    public function __construct(Word $word, Result $result, Lesson $lesson, Category $category, Activity $activity, UserWord $userWord)
     {
         $this->word = $word;
         $this->result = $result;
         $this->lesson = $lesson;
         $this->category = $category;
+        $this->activity = $activity;
+        $this->userWord = $userWord;
     }
 
     /**
@@ -38,13 +44,28 @@ class LessonController extends Controller
 
         $this->validate($request, $this->lesson->rules);
 
+        // Create lesson name
+        $lessonName = null;
+        switch ($request->get('lesson_type')) {
+            case config('constants.LESSON_1'):
+                $lessonName = trans('message.lesson_name_1');
+                break;
+            case config('constants.LESSON_2'):
+                $lessonName = trans('message.lesson_name_2');
+                break;
+            case config('constants.LESSON_3'):
+                $lessonName = trans('message.lesson_name_3');
+                break;
+        }
+        
         DB::beginTransaction();
         try {
             // create lesson
             $lesson = $this->lesson->create([
                 'type' => $request->input('lesson_type'),
                 'category_id' => $request->input('category_id'),
-                'user_id' => $request->input('user_id')
+                'user_id' => $request->input('user_id'),
+                'name' => $lessonName
             ]);
 
             // get lists words for this lesson
@@ -56,16 +77,24 @@ class LessonController extends Controller
             // get list word id
             $results = [];
             foreach ($words as $word) {
-                $results []  =  [
+                $results [] = [
                     'word_id' => $word->id,
                     'lesson_id' => $lesson->id,
                     'user_id' => $user->id
-
                 ];
             }
 
             // create answers sheet
             $this->result->createResult($results);
+
+            // create activity
+            $this->activity->create([
+                'user_id' => $user->id,
+                'target_id' => $lesson->id
+            ]);
+
+            // Save words ready learned
+            $this->userWord->createLearnedWords($results);
 
         } catch (\Exception $e) {
             DB::rollback();
@@ -115,7 +144,7 @@ class LessonController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function answer(Request $request,$categoryId, $id)
+    public function answer(Request $request, $categoryId, $id)
     {
         try {
             $this->category->findOrFail($categoryId);

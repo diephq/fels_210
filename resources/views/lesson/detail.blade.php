@@ -22,7 +22,10 @@
 @section('content')
     <div class="clock show-clock"></div>
     <div class="container lesson category">
-        <h2 class="title">{{ $category->name }} > {{ $lesson->name }}</h2>
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="title">{{ $category->name }} / {{ $lesson->name }}</h2>
+        </div>
+        <div class="col-md-10 col-md-offset-1">
         <hr>
         <div class="row">
             <div class="col-md-7 centered">

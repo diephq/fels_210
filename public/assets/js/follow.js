@@ -28,8 +28,10 @@ Follow.prototype = {
 
                 if (_result == _self.following) {
                     $(_self.self).attr('value', _self.button_following);
+                    $(_self.self).attr('class', 'btn-follow btn-following follow');
                 } else {
                     $(_self.self).attr('value', _self.button_follow);
+                    $(_self.self).attr('class', 'btn-follow btn-follow follow');
                 }
             }
         });

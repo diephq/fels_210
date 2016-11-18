@@ -1,9 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="container">
-        <h1>{{ trans('message.edit_profile') }}</h1>
-        <hr>
+    <div class="container category">
+        <div class="col-md-10 col-md-offset-1">
+            <h1 class="page-header title">{{ trans('message.edit_profile') }}</h1>
+        </div>
         <div class="row">
             {{ Form::open(['method' => 'post', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) }}
                 <!-- left column -->

@@ -3,50 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Word;
-use App\Category;
 use Auth;
+use App\Activity;
+use App\Http\Requests;
 
-class WordController extends Controller
+class ActivityController extends Controller
 {
-    protected $word;
-    protected $category;
+    protected $activity;
+    protected $relationship;
 
-    /**
-     * WordController constructor.
-     * @param Word $word
-     * @param Category $category
-     */
-    public function __construct(Word $word, Category $category) {
-        $this->word = $word;
-        $this->category = $category;
+    public function __construct(Activity $activity)
+    {
+        $this->activity = $activity;
     }
 
     /**
      * Display a listing of the resource.
-     * @param  \Illuminate\Http\Request  $request
+     *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
         $user = Auth::user();
 
-        $learned = $request->get('learned');
-        $unlearned = $request->get('unlearned');
+        // get list activities of following users
+        $activities = $this->activity->getActivities($user->id);
 
-        $params = [
-            'category_id' => $request->get('category'),
-            'learned' => $learned,
-            'user_id' => $user->id
-        ];
-
-        $words = $this->word->getWords($params);
-
-        $categories = $this->category->all();
-
-        return view('words/index', compact('categories', 'words', 'learned', 'unlearned'));
+        return view('activity.index', compact('activities'));
     }
 
     /**

@@ -35,12 +35,11 @@ class Word extends Model
     }
 
     /**
-     * Get results
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function results()
+    public function user_words()
     {
-        return $this->hasMany('App\Result');
+        return $this->hasMany('App\UserWord');
     }
 
     /**
@@ -74,7 +73,7 @@ class Word extends Model
         $user_id = $params['user_id'];
 
         $words = Word::with('category')
-            ->with(['results' => function ($query) use ($user_id) {
+            ->with(['user_words' => function ($query) use ($user_id) {
                 $query->where('user_id', $user_id);
             }]);
 

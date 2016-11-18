@@ -28,6 +28,9 @@
 </div>
 <div class="form-group {{ $errors->has('answer2') ? 'has-error' : ''}}">
     {!! Form::label('answer2', trans('message.admin_word.answer_2'), ['class' => 'col-md-4 control-label']) !!}
+=======
+    {!! Form::label('answer2', 'Answer2', ['class' => 'col-md-4 control-label']) !!}
+>>>>>>> origin/style
     <div class="col-md-6">
         {!! Form::text('answer2', null, ['class' => 'form-control']) !!}
         {!! $errors->first('answer2', '<p class="help-block">:message</p>') !!}

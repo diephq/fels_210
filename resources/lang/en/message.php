@@ -99,6 +99,7 @@ return [
         'update_success' => 'Word update success',
         'delete_error' => 'Word delete error',
         'delete_success' => 'Word delete success',
+
         'create_new_word' => 'Create New Word',
         'edit' => 'Edit Word ',
         'button_create' => 'Create',
@@ -108,6 +109,5 @@ return [
         'answer_2' => 'Answer 2',
         'answer_3' => 'Answer 3',
         'answer_4' => 'Answer 4',
-
     ],
 ];

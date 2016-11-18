@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'LESSON_1' => 20, // this is words for lesson
+    'LESSON_1' => 2, // this is words for lesson
     'LESSON_2' => 25,
     'LESSON_3' => 30,
     'PAGINATE_USER' => 10,
@@ -17,5 +17,4 @@ return [
     'ANSWER_4' => 4,
     'TRUE_ANSWER' => 1,
     'FALSE_ANSWER' => 0,
-
 ];

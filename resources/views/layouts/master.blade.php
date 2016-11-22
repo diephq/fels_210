@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <meta id="token" name="token" content="{{ csrf_token() }}">
 
     @section('css')
         {{ Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css') }}

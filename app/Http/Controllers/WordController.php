@@ -42,7 +42,7 @@ class WordController extends Controller
         ];
 
         $words = $this->word->getWords($params);
-
+            
         $categories = $this->category->all();
 
         return view('words/index', compact('categories', 'words', 'learned'));

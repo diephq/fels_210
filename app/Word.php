@@ -40,12 +40,11 @@ class Word extends Model
     }
 
     /**
-     * Get results
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function results()
+    public function user_words()
     {
-        return $this->hasMany('App\Result');
+        return $this->hasMany('App\UserWord');
     }
 
     /**
@@ -76,19 +75,44 @@ class Word extends Model
      */
     public function getWords($params = [])
     {
-        $user_id = $params['user_id'];
+        $userId = $params['user_id'];
+
+        // Get words id learned
+        $learnedIds = $this->__getWordLearned($userId);
 
         $words = Word::with('category')
-            ->with(['results' => function ($query) use ($user_id) {
-                $query->where('user_id', $user_id);
-            }]);
+            ->with('user_words');
 
         if (!empty($params['category_id'])) {
             $words->where('words.category_id', $params['category_id']);
         }
 
+        if ($params['learned'] == config('constants.LESSON_TESTED')) {
+            $words->whereIn('id', $learnedIds);
+        }
+
+        if ($params['learned'] == config('constants.LESSON_UN_TESTED')) {
+            $words->whereNotIn('id', $learnedIds);
+        }
+
         return $words->groupBy('words.id')
             ->paginate(config('constants.PAGINATE_USER'));
+    }
+
+    private function __getWordLearned($userId)
+    {
+        $words = UserWord::where('user_id', $userId)->groupBy('word_id')->get();
+
+        if (empty($words)) {
+            return [];
+        }
+
+        $wordIds = [];
+        foreach ($words as $word) {
+            $wordIds [] = $word->word_id;
+        }
+
+        return $wordIds;
     }
 
     public function getListWordAdmin()

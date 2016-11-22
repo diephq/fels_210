@@ -2,12 +2,14 @@
 
 @section('content')
     <div class="container category">
-        <div class="col-md-8 col-md-offset-2">
-            <h2>{{ $category->name }}</h2>
+        <div class="col-md-10 col-md-offset-1">
+            <h1 class="page-header title">{{ $category->name }}</h1>
         </div>
-        <div class="col-md-8 col-md-offset-2">
-            <h3 class="page-header">{{ $category->description }}</h3>
+        <div class="col-md-8 col-md-offset-2 border-bottom">
+            <h3 class="description">{{ $category->description }}</h3>
         </div>
+        <br>
+        
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 {{ Form::open(['url' => 'lesson/create', 'method' => 'post']) }}

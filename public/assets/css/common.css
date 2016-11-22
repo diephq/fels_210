@@ -77,26 +77,110 @@
     transform: scale(1) rotateZ(0deg);
     opacity: 1;
 }
+.content {
+    background-color: #1FA67A;
+}
 
 .footer {
-    background-color: #f8f8f8;
+    background-color: #313233;
     padding: 10px 0;
+    color: #fff;
 }
 
 .category {
-    min-height: 590px;
+    min-height: 662px;
+    background-color: #fff;
 }
 
 .page-header {
     padding-bottom: 9px;
     margin: 40px 0 20px;
+    font-size: 32px;
+    color: #444;
     border-bottom: 1px solid #eee;
+}
+li.list-item > div {
+    display: inline-block;
+}
+
+li.list-item > .btn-show-follow {
+    float: right;
+}
+
+li.list-item > .name {
+    width: 150px;
+    padding-left: 50px;
+}
+
+li.list-item > .email {
+    width: 100px;
+}
+
+.btn-follow {
+    border: 0px;
+    padding: 10px 10px;
+    width: 90px;
+    background-color: #1f81a6;
+    color: #fff;
+}
+
+.btn-following {
+    background-color: #e05f22;
 }
 
 .show-clock {
     position: fixed !important;
-    left: 970px;
+    left: 895px;
     top: 80px;
+}
+
+a.category-item {
+    color: #1FA67A;
+}
+a:hover.category-item {
+    color: #20614b;
+}
+.padding-top {
+    padding-top: 30px;
+}
+.title {
+    color: #d26666;
+}
+.description {
+    font-size: 30px;
+}
+.border-bottom {
+    border-bottom: 1px solid #d0c5c5;
+    margin-bottom: 10px;
+}
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0px;
+}
+
+.header a.navbar-brand {
+    color: #1FA67A;
+    padding: 20px 20px;
+    font-size: 30px;
+}
+
+.header a:hover.navbar-brand {
+    color: #1FA67A;
+}
+
+.header ul li a.active {
+    background-color: #1FA67A;
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    background-color: #1FA67A;
+    color: #fff;
+}
+.navbar-nav>li>a {
+    padding: 20px 20px;
+    font-size: 15px;
 }
 
 .lesson {
@@ -110,6 +194,7 @@
 .search {
     float: right;
 }
+
 
 .checkbox label input[type="checkbox"]:disabled + .cr,
 .radio label input[type="radio"]:disabled + .cr {
@@ -164,5 +249,6 @@
     display: inline-block;
     float: right;
 }
-
-
+.login {
+    margin-top: 100px
+}

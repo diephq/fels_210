@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container category">
-        <div class="col-md-8 col-md-offset-2">
-            <h1 class="page-header">{{ trans('message.activities') }}</h1>
+        <div class="col-md-10 col-md-offset-1">
+            <h1 class="page-header title">{{ trans('message.activities') }}</h1>
         </div>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">

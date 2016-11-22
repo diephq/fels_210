@@ -19,10 +19,12 @@
         @include('layouts.header')
 
         <!-- include the alert template here -->
-        @include('template.alert')
-        @include('template.error')
-
-        @yield('content')
+        
+        <div class="content">
+            @include('template.alert')
+            @include('template.error')
+            @yield('content')
+        </div>
 
         @include('layouts.footer')
 

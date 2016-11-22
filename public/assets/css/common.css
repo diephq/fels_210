@@ -134,6 +134,20 @@
     float: right;
 }
 
+.image_size_small {
+    height: 50px;
+    width: 50px;
+}
+.follow {
+    float: right;
+}
+
+.form_follow {
+    display: inline-block;
+    float: right;
+}
+
+
 .add_more {
     float: right;
 }

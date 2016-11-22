@@ -12,13 +12,13 @@
             <div class="col-md-8 col-md-offset-2">
                 {{ Form::open(['url' => 'lesson/create', 'method' => 'post']) }}
                 <div class="col-md-3">
-                    {{ Form::radio('lesson_type', config('constants.LESSON_1')) }} {{ trans('message.name_lesson_1') }}
+                    {{ Form::radio('lesson_type', config('constants.LESSON_1')) }} {{ trans('message.lesson_name_1') }}
                 </div>
                 <div class="col-md-3">
-                    {{ Form::radio('lesson_type', config('constants.LESSON_2')) }} {{ trans('message.name_lesson_2') }}
+                    {{ Form::radio('lesson_type', config('constants.LESSON_2')) }} {{ trans('message.lesson_name_1') }}
                 </div>
                 <div class="col-md-3">
-                    {{ Form::radio('lesson_type', config('constants.LESSON_3')) }} {{ trans('message.name_lesson_3') }}
+                    {{ Form::radio('lesson_type', config('constants.LESSON_3')) }} {{ trans('message.lesson_name_1') }}
                 </div>
                 {{ Form::hidden('category_id', $category->id )}}
                 {{ Form::hidden('user_id', $user->id) }}

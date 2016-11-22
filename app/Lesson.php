@@ -26,6 +26,11 @@ class Lesson extends Model
         'user_id' => 'required|numeric||exists:users,id',
     ];
 
+    public function category()
+    {
+        return $this->belongsTo('App\Category', 'category_id');
+    }
+
     /**
      * Get lesson detail
      *

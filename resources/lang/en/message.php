@@ -30,9 +30,9 @@ return [
     'lesson_not_found' => 'Lesson not found',
     'create_lesson_error' => 'Error when create lesson',
     'start_lesson' => 'Start Lesson',
-    'name_lesson_1' => 'Lesson 1', // lesson's name
-    'name_lesson_2' => 'Lesson 2',
-    'name_lesson_3' => 'Lesson 3',
+    'lesson_name_1' => 'Lesson one',
+    'lesson_name_2' => 'Lesson two',
+    'lesson_name_3' => 'Lesson three',
     'result' => 'Result',
     'learned' => 'Words ready learned',
     'select_category' => '-- Select an Category --',
@@ -71,6 +71,7 @@ return [
     'delete_confirm' => 'Confirm delete',
     'remove' => 'Remove',
     'login_facebook' => 'Login Facebook',
+
     'score' => 'Score',
     'date' => 'Date',
     'id' => 'ID',

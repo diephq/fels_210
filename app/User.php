@@ -96,6 +96,15 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($password);
     }
 
+    public function getAvatarAttribute($value)
+    {
+        if (empty($value)) {
+            return config('path.to_avatar_default');
+        }
+
+        return $value;
+    }
+
     /**
      * Get list user following
      *

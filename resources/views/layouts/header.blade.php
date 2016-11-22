@@ -19,7 +19,7 @@
                     <li><a href="{{ route('following') }}">{{ trans('message.follow.following') }}</a></li>
                     <li><a href="{{ route('categories') }}">{{ trans('message.categories') }}</a></li>
                     <li><a href="{{ route('words') }}">{{ trans('message.words' ) }}</a></li>
-                    <li><a href="#">{{ trans('message.activities') }}</a></li>
+                    <li><a href="{{ route('activities') }}">{{ trans('message.activities') }}</a></li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

@@ -22,10 +22,10 @@
 @section('content')
     <div class="clock show-clock"></div>
     <div class="container lesson category">
-        <h2>{{ $category->name }} > {{ $lesson->name }}</h2>
+        <h2 class="title">{{ $category->name }} > {{ $lesson->name }}</h2>
         <hr>
         <div class="row">
-            <div class="col-md-8 centered">
+            <div class="col-md-7 centered">
                 <ul class="list-group">
                     @if (empty($lesson->status))
                         {{ Form::open([ 'method' => 'post']) }}

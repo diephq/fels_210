@@ -17,6 +17,11 @@ class Word extends Model
         'category_id', 'text'
     ];
 
+    public $rules = [
+        'category_id' => 'required|numeric|exists:categories,id',
+        'text' => 'required|max:255',
+    ];
+
     /**
      * Get the answers for the word.
      */
@@ -84,5 +89,15 @@ class Word extends Model
 
         return $words->groupBy('words.id')
             ->paginate(config('constants.PAGINATE_USER'));
+    }
+
+    public function getListWordAdmin()
+    {
+        return Word::with('category')->paginate(config('constants.PAGINATE_ADMIN'));
+    }
+
+    public function getWordDetail($id)
+    {
+        return Word::with('category')->with('answers')->find($id);
     }
 }

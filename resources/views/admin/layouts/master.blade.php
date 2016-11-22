@@ -50,9 +50,6 @@
     {{ Html::script('bower_components/AdminLTE/bootstrap/js/bootstrap.min.js') }}
     {{ Html::script('bower_components/AdminLTE/dist/js/app.min.js') }}
     {{ Html::script('bower_components/AdminLTE/dist/js/demo.js') }}
-    <script>
-        $.widget.bridge('uibutton', $.ui.button);
-    </script>
 </body>
 @show
 </html>

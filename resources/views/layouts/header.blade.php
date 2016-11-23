@@ -15,7 +15,7 @@
                     <li><a href="{{ url('/login') }}">{{ trans('message.login') }}</a></li>
                     <li><a href="{{ url('/register') }}">{{ trans('message.register') }}</a></li>
                 @else
-                    <li><a class='active' href="{{ route('users') }}">{{ trans('message.follow.all_users') }}</a></li>
+                    <li><a href="{{ route('users') }}">{{ trans('message.follow.all_users') }}</a></li>
                     <li><a href="{{ route('following') }}">{{ trans('message.follow.following') }}</a></li>
                     <li><a href="{{ route('categories') }}">{{ trans('message.categories') }}</a></li>
                     <li><a href="{{ route('words') }}">{{ trans('message.words' ) }}</a></li>

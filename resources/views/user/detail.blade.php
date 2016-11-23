@@ -2,12 +2,19 @@
 
 @section('content')
     <div class="container category">
-        <div class="col-md-10 col-md-offset-1">
-            <h1 class="page-header title">{{ trans('message.edit_profile') }}</h1>
-        </div>
-        <div class="row">
-            {{ Form::open(['method' => 'post', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) }}
-                <!-- left column -->
+        <div class="col-md-12">
+            <div class="col-md-10 col-md-offset-1">
+                <h1 class="page-header title">{{ trans('message.edit_profile') }}</h1>
+            </div>
+            <div class="panel-body col-md-10 col-md-offset-1">
+                @if ($errors->any())
+                    <ul class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+                {{ Form::open(['method' => 'post', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) }}
                 <div class="col-md-3">
                     <div class="text-center">
                         <?php $avatar = !empty($user->avatar) ? $user->avatar : config('path.to_avatar_default') ?>
@@ -16,8 +23,7 @@
                         {{ Form::file('avatar', ['class' => 'form-control']) }}
                     </div>
                 </div>
-
-                <!-- edit form column -->
+                    
                 <div class="col-md-9 personal-info">
                     <h3>{{ trans('message.user_info') }}</h3>
                     <div class="form-group">
@@ -57,7 +63,8 @@
                         </div>
                     </div>
                 </div>
-            {{ Form::close() }}
+                {{ Form::close() }}
+            </div>
         </div>
     </div>
 @stop

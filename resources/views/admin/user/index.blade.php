@@ -17,7 +17,6 @@
                                     <th>{{ trans('message.avatar') }}</th>
                                     <th>{{ trans('message.name') }}</th>
                                     <th>{{ trans('message.email') }}</th>
-                                    <th>{{ trans('message.role') }}</th>
                                     <th>{{ trans('message.actions') }}</th>
                                 </tr>
                             </thead>
@@ -31,7 +30,6 @@
                                     </td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->email }}</td>
-                                    <td>{{ $item->role }}</td>
                                     <td>
                                         <a href="{{ action('Admin\UserController@show', ['id' => $item->id]) }}" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
                                         <a href="{{ action('Admin\UserController@edit', ['id' => $item->id]) }}" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>

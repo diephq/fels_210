@@ -8,16 +8,18 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <ul class="list-group">
+                    @if (!empty($activities))
                     @foreach ($activities as $activity)
                         <li class="list-group-item">
                             <img src="{{ $activity->user->avatar }}" class="avatar img-circle image_size_small" alt="avatar">
                             <span>{{ $activity->user->name }}</span>
-                            <span>{{ $activity->lesson->category->name }}</span>/
+                            <span class="category_name"><b>{{ $activity->lesson->category->name }}</b></span>/
                             <span>{{ $activity->lesson->name }}</span>/
-                            <span>{{ $activity->created_at }}</span>
-                            <span class="badge">{{ (int) $activity->lesson->score }}</span>
+                            <span class="category_name">{{ $activity->created_at }}</span>
+                            <span class="badge">{{ (int) $activity->lesson->score . '/' . $activity->lesson->type  }}</span>
                         </li>
                     @endforeach
+                    @endif
                 </ul>
                 {{ $activities->links() }}
             </div>

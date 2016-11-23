@@ -1,15 +1,13 @@
-<div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
+<div class="form-group">
     {!! Form::label('name', trans('message.category.name'), ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
         {!! Form::text('name', null, ['class' => 'form-control']) !!}
-        {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
-<div class="form-group {{ $errors->has('description') ? 'has-error' : ''}}">
+<div class="form-group">
     {!! Form::label('description', trans('message.category.description'), ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
         {!! Form::text('description', null, ['class' => 'form-control']) !!}
-        {!! $errors->first('description', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 

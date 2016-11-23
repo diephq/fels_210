@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>E-learning</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <meta id="token" name="token" content="{{ csrf_token() }}">
 
     @section('css')
         {{ Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css') }}
@@ -22,7 +24,7 @@
         
         <div class="content">
             @include('template.alert')
-            @include('template.error')
+            {{--@include('template.error')--}}
             @yield('content')
         </div>
 

@@ -17,10 +17,10 @@
                     {{ Form::radio('lesson_type', config('constants.LESSON_1')) }} {{ trans('message.lesson_name_1') }}
                 </div>
                 <div class="col-md-3">
-                    {{ Form::radio('lesson_type', config('constants.LESSON_2')) }} {{ trans('message.lesson_name_1') }}
+                    {{ Form::radio('lesson_type', config('constants.LESSON_2')) }} {{ trans('message.lesson_name_2') }}
                 </div>
                 <div class="col-md-3">
-                    {{ Form::radio('lesson_type', config('constants.LESSON_3')) }} {{ trans('message.lesson_name_1') }}
+                    {{ Form::radio('lesson_type', config('constants.LESSON_3')) }} {{ trans('message.lesson_name_3') }}
                 </div>
                 {{ Form::hidden('category_id', $category->id )}}
                 {{ Form::hidden('user_id', $user->id) }}
@@ -37,7 +37,7 @@
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
                         <th>{{ trans('message.id') }}</th>
-                        <th>{{ trans('message.categories') }}</th>
+                        <th>{{ trans('message.result') }}</th>
                         <th>{{ trans('message.date') }}</th>
                         <th>{{ trans('message.score') }}</th>
                     </thead>

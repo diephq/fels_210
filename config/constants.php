@@ -7,6 +7,7 @@ return [
     'PAGINATE_USER' => 10,
     'PAGINATE_ADMIN' => 15,
     'LESSON_TESTED' => 1,
+    'LESSON_UN_TESTED' => 2,
     'ADMIN_ROLE' => 1,
     'USER_ROLE' => 0,
     'UN_FOLLOW' => 1,

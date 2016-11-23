@@ -11,8 +11,8 @@ var Lesson = function (words) {
 Lesson.prototype = {
     init: function () {
         var _self = this;
-        _self.initClock();
         _self.initEvent();
+        _self.initClock();
     },
 
     initClock: function () {
@@ -37,7 +37,9 @@ Lesson.prototype = {
 
     initEvent: function () {
         $("#lesson").on('click', function() {
+            localStorage.removeItem('count_down');
             localStorage.clear();
+            delete window.localStorage;
         });
     }
 

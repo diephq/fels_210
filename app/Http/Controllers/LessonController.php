@@ -10,6 +10,7 @@ use App\Result;
 use App\Lesson;
 use App\Category;
 use App\Activity;
+use App\UserWord;
 use DB;
 use App\Http\Requests;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -21,14 +22,16 @@ class LessonController extends Controller
     protected $lesson;
     protected $category;
     protected $activity;
+    protected $userWord;
 
-    public function __construct(Word $word, Result $result, Lesson $lesson, Category $category, Activity $activity)
+    public function __construct(Word $word, Result $result, Lesson $lesson, Category $category, Activity $activity, UserWord $userWord)
     {
         $this->word = $word;
         $this->result = $result;
         $this->lesson = $lesson;
         $this->category = $category;
         $this->activity = $activity;
+        $this->userWord = $userWord;
     }
 
     /**
@@ -90,6 +93,9 @@ class LessonController extends Controller
                 'user_id' => $user->id,
                 'target_id' => $lesson->id
             ]);
+
+            // Save words ready learned
+            $this->userWord->createLearnedWords($results);
 
         } catch (\Exception $e) {
             dd($e);

@@ -40,11 +40,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        {{ Form::checkbox('remember') }} {{ trans('message.remember') }}
-                                    </label>
-                                </div>
+                                {{ Form::checkbox('remember') }} {{ trans('message.remember') }}
                             </div>
                         </div>
 

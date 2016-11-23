@@ -25,7 +25,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = $this->user->paginate(config('constants.PAGINATE_ADMIN'));
+        $user = $this->user->where('role', '!=', config('constants.ADMIN_ROLE'))->paginate(config('constants.PAGINATE_ADMIN'));
 
         return view('admin.user.index', compact('user'));
     }

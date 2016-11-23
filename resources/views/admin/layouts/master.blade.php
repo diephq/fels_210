@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>E-learning</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ trans('message.project') }}</title>
@@ -31,7 +32,6 @@
             <section class="content">
 
                 @include('template.alert')
-                @include('template.error')
 
                 @yield('content')
 

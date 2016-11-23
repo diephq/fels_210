@@ -1,4 +1,4 @@
-<div class="form-group {{ $errors->has('category_id') ? 'has-error' : ''}}">
+<div class="form-group">
     {!! Form::label('category_id', trans('message.categories'), ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
         <select name="category_id" class="form-control">
@@ -7,15 +7,13 @@
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
         </select>
-        {!! $errors->first('category_id', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 
-<div class="form-group {{ $errors->has('text') ? 'has-error' : ''}}">
+<div class="form-group">
     {!! Form::label('text', trans('message.admin_word.text'), ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
         {!! Form::text('text', null, ['class' => 'form-control']) !!}
-        {!! $errors->first('text', '<p class="help-block">:message</p>') !!}
     </div>
 
 </div>
@@ -24,14 +22,14 @@
     <div class="form-group answers">
         {!! Form::label('answer', trans('message.admin_word.answer'), ['class' => 'col-md-4 control-label']) !!}
         <div class="col-md-6">
-            {!! Form::text('answer[]', null, ['class' => 'form-control']) !!}
+            <input type="text" name="answer[]" class="form-control">
         </div>
         {!! Form::radio('true_answer', config('constants.ANSWER_1')) !!}
     </div>
     <div class="form-group answers">
         {!! Form::label('answer', trans('message.admin_word.answer'), ['class' => 'col-md-4 control-label']) !!}
         <div class="col-md-6">
-            {!! Form::text('answer[]', null, ['class' => 'form-control']) !!}
+            <input type="text" name="answer[]" class="form-control">
         </div>
         {!! Form::radio('true_answer', config('constants.ANSWER_2')) !!}
     </div>

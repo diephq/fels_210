@@ -35,17 +35,18 @@ class WordController extends Controller
 
         $learned = $request->get('learned');
 
+        $categoryId = $request->get('category');
+
         $params = [
-            'category_id' => $request->get('category'),
+            'category_id' => $categoryId,
             'learned' => $learned,
-            'user_id' => $user->id
         ];
 
-        $words = $this->word->getWords($params);
-
+        $words = $this->word->getWords($user->id, $params);
+            
         $categories = $this->category->all();
 
-        return view('words/index', compact('categories', 'words', 'learned'));
+        return view('words/index', compact('categories', 'words', 'learned', 'categoryId'));
     }
 
     /**

@@ -79,7 +79,13 @@ class UserController extends Controller
             return abort(404);
         }
 
-        $this->validate($request, $this->user->rules);
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users,email,'.$user->id,
+            'avatar' => ['mimes:jpg,jpeg,JPEG,png,gif', 'max:2024'],
+            'password' => 'required|min:6|max:30|confirmed',
+            'password_confirmation' => 'required'
+        ]);
 
         $params = [
             'id' => $user->id,

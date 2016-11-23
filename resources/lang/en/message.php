@@ -110,5 +110,8 @@ return [
         'answer_3' => 'Answer 3',
         'answer_4' => 'Answer 4',
         'add_more' => 'Add More',
+        'list_word' => 'List Words',
+        'button_update' => 'Update'
+
     ],
 ];

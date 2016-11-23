@@ -21,14 +21,14 @@
 </div>
 
 <div class="input_fields_wrap">
-    <div class="form-group">
+    <div class="form-group answers">
         {!! Form::label('answer', trans('message.admin_word.answer'), ['class' => 'col-md-4 control-label']) !!}
         <div class="col-md-6">
             {!! Form::text('answer[]', null, ['class' => 'form-control']) !!}
         </div>
         {!! Form::radio('true_answer', config('constants.ANSWER_1')) !!}
     </div>
-    <div class="form-group">
+    <div class="form-group answers">
         {!! Form::label('answer', trans('message.admin_word.answer'), ['class' => 'col-md-4 control-label']) !!}
         <div class="col-md-6">
             {!! Form::text('answer[]', null, ['class' => 'form-control']) !!}

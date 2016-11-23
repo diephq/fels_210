@@ -1,0 +1,14 @@
+.panel-body form {
+    display: inline;
+}
+
+.table-responsive form {
+    display: inline;
+}
+.image_size {
+    height: 50px;
+    width: 50px;
+}
+.add_more {
+    float: right;
+}

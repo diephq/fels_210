@@ -36,16 +36,18 @@
     <section class="sidebar">
         <ul class="sidebar-menu">
             <li class="header">{{ trans('message.main') }}</li>
-            <li class="active treeview">
+
+            <li class="treeview">
                 <a href="#">
                     <i class="fa fa-dashboard"></i> <span>{{ trans('message.user') }}</span>
                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="#"><i class="fa fa-circle-o"></i>{{ trans('message.list_user') }}</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>{{ trans('message.create_user') }}</a></li>
+                    <li class="active"><a href="/admin/user"><i class="fa fa-circle-o"></i>{{ trans('message.list_user') }}</a></li>
+                    <li><a href="/admin/user/create"><i class="fa fa-circle-o"></i>{{ trans('message.create_user') }}</a></li>
                 </ul>
             </li>
+
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-files-o"></i>
@@ -57,6 +59,18 @@
                     <li><a href="/admin/category/create"><i class="fa fa-circle-o"></i>{{ trans('message.create_category') }}</a></li>
                 </ul>
             </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i> <span>{{ trans('message.admin_word.word') }}</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/admin/word"><i class="fa fa-circle-o"></i>{{ trans('message.admin_word.list_word') }}</a></li>
+                    <li><a href="/admin/word/create"><i class="fa fa-circle-o"></i>{{ trans('message.admin_word.create_new_word') }}</a></li>
+                </ul>
+            </li>
+
         </ul>
     </section>
 </aside>

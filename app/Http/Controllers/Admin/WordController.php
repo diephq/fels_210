@@ -57,7 +57,7 @@ class WordController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, $this->word->rules);
+//        $this->validate($request, $this->word->rules);
 
         $trueAnswer = $request->get('true_answer');
 
@@ -138,7 +138,7 @@ class WordController extends Controller
     {
         $word = $this->word->findOrFail($id);
 
-        $this->validate($request, $this->word->rules);
+//        $this->validate($request, $this->word->rules);
 
         DB::beginTransaction();
         try {

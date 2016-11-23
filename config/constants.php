@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'LESSON_1' => 20, // this is words for lesson
-    'LESSON_2' => 25,
-    'LESSON_3' => 30,
+    'LESSON_1' => 2, // this is words for lesson
+    'LESSON_2' => 3,
+    'LESSON_3' => 4,
     'PAGINATE_USER' => 10,
     'PAGINATE_ADMIN' => 15,
     'LESSON_TESTED' => 1,

@@ -92,6 +92,7 @@ class LessonController extends Controller
             ]);
 
         } catch (\Exception $e) {
+            dd($e);
             DB::rollback();
             return redirect('categories')
                 ->withErrors(['error' => trans('message.create_lesson_error')])

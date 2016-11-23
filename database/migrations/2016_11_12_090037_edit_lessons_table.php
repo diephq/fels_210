@@ -13,7 +13,6 @@ class EditLessonsTable extends Migration
     public function up()
     {
         Schema::table('lessons', function (Blueprint $table) {
-            $table->string('name')->after('type');
             $table->integer('score')->after('name')->nullable();
             $table->tinyInteger('status')->after('score')->nullable();
         });
